@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de Monedas y Notitas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="outer-container">
+    
+    <!-- SECCIÓN IZQUIERDA: FORMULARIO Y CONVERSOR -->
+    <aside class="form-section">
+      <!-- Caja Amarilla: Nombre de la notita -->
+      <div class="field-box yellow-box">
+        <input type="text" id="note-title" placeholder="NOMBRE DE LA NOTITA" autocomplete="off">
+      </div>
+
+      <!-- Caja Rosa: Monto / Moneda -->
+      <div class="field-box pink-box">
+        <input type="number" id="note-amount" placeholder="20000" min="0" step="any">
+        <span class="currency-label">U$S</span>
+      </div>
+
+      <!-- Caja Marrón: Resultado / Botón Agregar -->
+      <div class="field-box brown-box">
+        <div id="converted-preview">13 U$S</div>
+        <button type="button" id="btn-add">AGREGAR</button>
+      </div>
+    </aside>
+
+    <!-- SECCIÓN DERECHA: TABLERO DE NOTITAS -->
+    <main class="notes-section">
+      <div class="notes-grid" id="notes-grid">
+        
+        <!-- Notita 1 (Azul con conversión) -->
+        <div class="note-card card-blue">
+          <span class="delete-btn">&times;</span>
+          <h3>VACACIONES</h3>
+          <p>$20.00 = 13U$S</p>
+        </div>
+
+        <!-- Notita 2 (Azul vacía/placeholder) -->
+        <div class="note-card card-blue">
+          <span class="delete-btn">&times;</span>
+        </div>
+
+        <!-- Notita 3 (Gris alargada tipo barra) -->
+        <div class="note-card card-gray wide-card">
+          <span class="delete-btn">&times;</span>
+          <h3>COMPRAR GALLETITAS</h3>
+        </div>
+
+        <!-- Notita 4 (Celeste) -->
+        <div class="note-card card-cyan">
+          <span class="delete-btn">&times;</span>
+        </div>
+
+        <!-- Notita 5 (Celeste) -->
+        <div class="note-card card-cyan">
+          <span class="delete-btn">&times;</span>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

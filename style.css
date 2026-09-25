@@ -1,0 +1,217 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Marco exterior Azul */
+.outer-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 950px;
+  border: 5px solid #4a7bb0;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* --- SECCIÓN IZQUIERDA: FORMULARIO --- */
+.form-section {
+  width: 320px;
+  flex-shrink: 0;
+  border: 3px solid #edd991;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: #ffffff;
+}
+
+.field-box {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+/* Caja Amarilla */
+.yellow-box {
+  border: 4px solid #f5b800;
+  min-height: 70px;
+}
+
+.yellow-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #f5b800;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.yellow-box input::placeholder {
+  color: #f5b800;
+}
+
+/* Caja Rosa */
+.pink-box {
+  border: 4px solid #ffa0b5;
+  min-height: 70px;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.pink-box input {
+  width: 60%;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffa0b5;
+}
+
+.pink-box input::placeholder {
+  color: #ffa0b5;
+}
+
+.pink-box .currency-label {
+  font-weight: bold;
+  color: #ffa0b5;
+  font-size: 1.1rem;
+}
+
+/* Caja Marrón */
+.brown-box {
+  border: 4px solid #9e6038;
+  min-height: 180px;
+  gap: 15px;
+}
+
+#converted-preview {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #9e6038;
+}
+
+#btn-add {
+  background-color: transparent;
+  border: none;
+  color: #9e6038;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 5px 15px;
+  transition: transform 0.1s ease;
+}
+
+#btn-add:hover {
+  transform: scale(1.05);
+}
+
+/* --- SECCIÓN DERECHA: NOTITAS --- */
+.notes-section {
+  flex-grow: 1;
+  border: 3px solid #edd991;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+/* Estilos de las Tarjetas */
+.note-card {
+  position: relative;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 140px;
+  text-align: center;
+}
+
+.note-card .delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+  color: #888;
+}
+
+.note-card:hover .delete-btn {
+  opacity: 1;
+}
+
+/* Variaciones de Color según el Boceto */
+.card-blue {
+  border: 4px solid #4f7cb5;
+  color: #4f7cb5;
+}
+
+.card-cyan {
+  border: 4px solid #72c6e6;
+  color: #3baed2;
+}
+
+.card-gray {
+  border: 4px solid #b0b0b0;
+  color: #888888;
+  border-radius: 40px;
+}
+
+.wide-card {
+  grid-column: span 2;
+  min-height: 60px;
+}
+
+.note-card h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.note-card p {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .outer-container {
+    flex-direction: column;
+  }
+  .form-section {
+    width: 100%;
+  }
+  .wide-card {
+    grid-column: span 1;
+  }
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+}
